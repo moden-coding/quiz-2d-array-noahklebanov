@@ -23,7 +23,7 @@ public class App {
         int[][] testArray1 = {
             {1, 2, 3},
             {4, 5, 6},
-            {7, 8, 9}
+            {7, 8, 9},
         };
 
         // Examples of valid indices
@@ -55,9 +55,24 @@ public class App {
     
     }
 
-
     public static int columnRowAddition(int[][] arr, int row, int col){
+        int colSum=0;
+        int rowSum=0;
+        int total=0;
+        if(row>=0 && row<arr.length && col>=0 && col<arr[0].length){
+            for(int i=0; i<arr.length; i++){//for colSum
+                colSum+=arr[i][col];
+            }
+            for(int j=0; j<arr[0].length; j++){//for rowSum
+                rowSum+=arr[row][j];
+            }
+    
+            total=colSum+rowSum-arr[row][col];
+
+            return total;
+        }
+
+        return -1;
         
-        return -1;//placeholder
     }
 }
